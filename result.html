@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .result {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            width: 60%;
+        }
+        .result p {
+            font-weight: bold;
+        }
+        .uploaded-image {
+            max-width: 600px;
+            max-height: 400px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .button-container a, .button-container button {
+            padding: 12px 30px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button-container a:hover, .button-container button:hover {
+            background-color: #45a049;
+        }
+        .chat-container {
+            width: 35%;
+            height: 500px;
+            border: none;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-box {
+            height: 400px;
+            overflow-y: scroll;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .chat-box .user-message {
+            background-color: #e1ffc7;
+            padding: 10px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            margin-left: auto;
+            text-align: right;
+        }
+        .chat-box .bot-message {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            text-align: left;
+        }
+        .chat-input {
+            width: 80%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .chat-input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Plant Disease Prediction</h1>
+</header>
+
+<div class="container">
+    <div class="result">
+        <p><strong>Prediction:</strong> {{ label }}</p>
+        <img src="{{ url_for('uploaded_file', filename=image_url) }}" alt="Uploaded Image" class="uploaded-image">
+
+        <div class="button-container">
+            <a href="/">Upload Another Image</a>
+        </div>
+    </div>
+
+    <audio id="speechAudio" autoplay>
+        <source src="{{ url_for('uploaded_file', filename=audio_file) }}" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="chat-container">
+        <div class="chat-box" id="chatBox"></div>
+        <form id="chatForm">
+            <input type="text" class="chat-input" id="userMessage" placeholder="Ask something...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+<script>
+
+    // Chatbot logic
+    const chatForm = document.getElementById('chatForm');
+    const userMessageInput = document.getElementById('userMessage');
+    const chatBox = document.getElementById('chatBox');
+
+    chatForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const userMessage = userMessageInput.value;
+        userMessageInput.value = '';
+
+        // Add user message to chat box
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.classList.add('user-message');
+        userMessageDiv.textContent = "You: " + userMessage;
+        chatBox.appendChild(userMessageDiv);
+
+        // Send message to chatbot backend
+        fetch('/chatbot', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: `message=${userMessage}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.classList.add('bot-message');
+            botMessageDiv.textContent = "PlantBot: " + data.response;
+            chatBox.appendChild(botMessageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;  // Scroll to the latest message
+        });
+    });
+
+    
+</script>
+
+</body>
+</html>

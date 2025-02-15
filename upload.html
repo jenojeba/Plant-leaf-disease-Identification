@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Prediction</title>
+    <style>
+        /* Add your styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form input[type="file"] {
+            padding: 10px;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        .button {
+            padding: 12px 30px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        #image-preview-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px; /* Adjust the height as needed */
+            margin-top: 20px;
+        }
+        
+        .uploaded-image {
+            max-width: 400px;
+            max-height: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Plant Disease Prediction</h1>
+    <p>Upload an image of your plant leaf to predict its disease.</p>
+</header>
+
+<div class="container">
+    <h2>Upload Plant Leaf Image</h2>
+    <form method="POST" enctype="multipart/form-data" action="/">  <!-- Update action to match your server's endpoint -->
+        <input type="file" name="file" accept="image/*" required onchange="previewImage(event)">
+        <br><br>
+
+        <!-- Image Preview Container -->
+        <div id="image-preview-container">
+            <img id="image-preview" src="" alt="Image preview" class="uploaded-image" style="display:none;">
+        </div>
+
+        <!-- Submit button below the image preview -->
+        <button class="button" type="submit">Predict Disease</button>
+    </form>
+</div>
+
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+            var output = document.getElementById('image-preview');
+            output.src = reader.result;
+            output.style.display = 'block';
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+
+</body>
+</html>

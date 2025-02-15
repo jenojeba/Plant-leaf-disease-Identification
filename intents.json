@@ -1,0 +1,835 @@
+{
+  "intents": [
+
+    {
+      "tag": "General_Hello",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Hi there",
+        "Hello there",
+        "Greetings"
+      ],
+      "responses": [
+        "Hello! How can I assist you today?",
+        "Hi there! How can I help you today?"
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "General_Welcome",
+      "patterns": [
+        "Welcome",
+        "Welcome back",
+        "Good to see you",
+        "Hello, welcome"
+      ],
+      "responses": [
+        "Welcome! How can I help you today?",
+        "Thanks for coming back! What can I assist you with?"
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },{
+      "tag": "General_How_is_your_day",
+      "patterns": [
+        "How is your day?",
+        "How's your day going?",
+        "How was your day?"
+      ],
+      "responses": [
+        "My day is going well, thank you for asking! How about yours?",
+        "It’s going great, thank you! How’s your day going?"
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "General_How_are_you",
+      "patterns": [
+        "How are you?",
+        "How are you doing?",
+        "How’s it going?",
+        "What’s up?"
+      ],
+      "responses": [
+        "I'm doing great, thank you for asking! How about you?",
+        "I'm doing well! How are you today?"
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "General_Thank_you",
+      "patterns": [
+        "Thank you",
+        "Thanks",
+        "Thanks a lot",
+        "I appreciate it"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Glad I could help!"
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },{
+      "tag": "Everyday_Weather",
+      "patterns": [
+        "How's the weather today?",
+        "What's the weather like?",
+        "Is it sunny outside?",
+        "Is it raining?"
+      ],
+      "responses": [
+        "I can't provide real-time weather updates, but I recommend checking your local weather service!",
+        "I don't have access to current weather data, but I suggest using a weather app or website."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Everyday_Favorite_food",
+      "patterns": [
+        "What's your favorite food?",
+        "Do you like pizza?",
+        "What's your go-to meal?"
+      ],
+      "responses": [
+        "I don't eat, but I hear pizza is always a great choice!",
+        "I don’t have preferences, but I think everyone loves pizza!"
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Everyday_Favorite_color",
+      "patterns": [
+        "What's your favorite color?",
+        "Do you have a favorite color?",
+        "What's the best color?"
+      ],
+      "responses": [
+        "I don't have personal preferences, but I think blue is a popular favorite!",
+        "Colors are subjective, but blue seems to be loved by many!"
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Everyday_Movie",
+      "patterns": [
+        "What's your favorite movie?",
+        "Do you like movies?",
+        "What movie should I watch?"
+      ],
+      "responses": [
+        "I don't watch movies, but I hear 'The Shawshank Redemption' is a classic!",
+        "I don't watch movies, but 'Inception' is quite popular among movie lovers!"
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Everyday_Personal",
+      "patterns": [
+        "Do you have any hobbies?",
+        "What do you do for fun?",
+        "What do you like to do in your free time?"
+      ],
+      "responses": [
+        "I don't have hobbies, but I’m always here to chat or help you out!",
+        "I don't have free time, but I’m available whenever you need assistance!"
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "General_Goodbye",
+      "patterns": [
+        "Goodbye",
+        "See you later",
+        "Bye",
+        "Take care"
+      ],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "See you later! Take care!"
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Apple_Apple_scab",
+      "patterns": [
+        "What is apple scab?",
+        "How do I treat apple scab?",
+        "Symptoms of apple scab",
+        "Tell me about apple scab",
+        "Apple tree has black spots"
+      ],
+      "responses": [
+        "Apple scab is a fungal disease caused by Venturia inaequalis, resulting in dark, velvety spots on leaves and fruit. Apply fungicides and remove infected leaves to manage it."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Apple_Black_rot",
+      "patterns": [
+        "What is black rot in apples?",
+        "How do I treat black rot on my apple tree?",
+        "Symptoms of black rot in apples",
+        "Apple tree has rotting fruit",
+        "Tell me about black rot in apple trees"
+      ],
+      "responses": [
+        "Black rot is caused by the fungus Botryosphaeria obtusa, leading to cankers, leaf spots, and rotting fruit. Prune infected branches and apply fungicides to manage the disease."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Apple_Cedar_apple_rust",
+      "patterns": [
+        "What is cedar apple rust?",
+        "How do I prevent cedar apple rust?",
+        "Symptoms of cedar apple rust",
+        "My apple tree has orange spots",
+        "Tell me about cedar apple rust disease"
+      ],
+      "responses": [
+        "Cedar apple rust is a fungal disease caused by Gymnosporangium juniperi-virginianae. Symptoms include orange spots on leaves and fruit. Use resistant varieties and fungicides for control."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Apple_healthy",
+      "patterns": [
+        "Is my apple tree healthy?",
+        "Tell me about healthy apple trees",
+        "Healthy apple tree",
+        "Signs of a healthy apple plant",
+        "How to maintain healthy apple trees"
+      ],
+      "responses": [
+        "A healthy apple tree has green, spot-free leaves and firm, unblemished fruit. Proper watering, fertilization, and pest management are essential for its well-being."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Background_without_leaves",
+      "patterns": [
+        "There are no plants in the image",
+        "Background without any leaves",
+        "No plant identified",
+        "What if the background has no plants?",
+        "Empty background"
+      ],
+      "responses": [
+        "No plant is clearly identified in the image. Please provide an image with a visible plant to assist further."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Blueberry_healthy",
+      "patterns": [
+        "Is my blueberry plant healthy?",
+        "Healthy blueberry plant",
+        "Signs of a healthy blueberry bush",
+        "How to check if blueberry is healthy?",
+        "Tips for healthy blueberry plants"
+      ],
+      "responses": [
+        "Healthy blueberry plants have green, vibrant leaves and produce firm, plump berries. Ensure proper soil acidity and regular watering for optimal growth."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Cherry_Powdery_mildew",
+      "patterns": [
+        "What is powdery mildew on cherry?",
+        "How to treat powdery mildew on cherries?",
+        "Symptoms of powdery mildew on cherry trees",
+        "Cherry tree has white powder on leaves",
+        "Tell me about powdery mildew on cherries"
+      ],
+      "responses": [
+        "Powdery mildew on cherry trees is caused by fungal spores, resulting in white powdery spots on leaves. Manage it with sulfur-based fungicides and proper air circulation."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Cherry_healthy",
+      "patterns": [
+        "Is my cherry tree healthy?",
+        "Signs of a healthy cherry tree",
+        "How to keep my cherry tree healthy?",
+        "Healthy cherry tree characteristics",
+        "Tell me about healthy cherry plants"
+      ],
+      "responses": [
+        "A healthy cherry tree has glossy green leaves and produces firm, unblemished fruit. Regular pruning and pest management are key to maintaining its health."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Corn_Cercospora_leaf_spot",
+      "patterns": [
+        "What is Cercospora leaf spot in corn?",
+        "How do I treat Cercospora leaf spot?",
+        "Symptoms of Cercospora leaf spot in corn",
+        "Corn leaves have spots",
+        "Tell me about Cercospora in corn"
+      ],
+      "responses": [
+        "Cercospora leaf spot, also known as Gray leaf spot, in corn is caused by the fungus Cercospora zeae-maydis. Symptoms include grayish-brown lesions on leaves. Manage it with resistant hybrids and fungicides like strobilurins."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    }, {
+      "tag": "Corn_healthy",
+      "patterns": [
+        "Is my corn plant healthy?",
+        "How can I tell if my corn is healthy?",
+        "Signs of healthy corn plants",
+        "Describe a healthy corn crop",
+        "What does healthy corn look like?"
+      ],
+      "responses": [
+        "Healthy corn plants have vibrant green leaves, strong stalks, and no signs of disease or pests. Ensure proper watering and balanced fertilizer use."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Corn_Common_rust",
+      "patterns": [
+        "What is common rust in corn?",
+        "Tell me about corn rust",
+        "Symptoms of common rust in corn",
+        "How to treat rust in corn",
+        "Prevention for common rust in corn"
+      ],
+      "responses": [
+        "Common rust in corn is caused by the fungus Puccinia sorghi. Symptoms include reddish-brown pustules on leaves. Use resistant hybrids and apply fungicides like azoxystrobin or propiconazole."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Corn_Northern_Leaf_Blight",
+      "patterns": [
+        "What is Northern Leaf Blight in corn?",
+        "Tell me about Northern Leaf Blight",
+        "Symptoms of Northern Leaf Blight in corn",
+        "How to prevent Northern Leaf Blight in corn",
+        "How to treat Northern Leaf Blight"
+      ],
+      "responses": [
+        "Northern Leaf Blight in corn is caused by the fungus Exserohilum turcicum. Symptoms include long, grayish lesions on leaves. Manage with resistant hybrids and fungicides like propiconazole."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Grape_Black_rot",
+      "patterns": [
+        "What is black rot in grapes?",
+        "Symptoms of black rot in grapes",
+        "How to treat black rot in grapevines",
+        "How to prevent black rot in grapes",
+        "Tell me about black rot disease"
+      ],
+      "responses": [
+        "Black rot in grapes is caused by the fungus Guignardia bidwellii. It causes dark brown spots on leaves and shriveled fruit. Manage with fungicides like myclobutanil and regular pruning."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Grape_Esca_Black_Measles",
+      "patterns": [
+        "What is black measles in grapes?",
+        "Symptoms of black measles in grapes",
+        "How to treat black measles in grapevines",
+        "How to prevent black measles in grapes",
+        "Tell me about black measles disease in grapes"
+      ],
+      "responses": [
+        "Grape Esca, also known as Black Measles, is a fungal disease caused by the pathogens Phaeomoniella chlamydospora and Phaeoacremonium aleophilum. It leads to black streaks on leaves and shriveled fruit. Management includes removing infected vines and applying fungicides."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Grape_Leaf_blight_Isariopsis_Leaf_Spot",
+      "patterns": [
+        "What is leaf blight in grapes?",
+        "Symptoms of Isariopsis leaf spot in grapes",
+        "How to treat leaf blight in grapes",
+        "How to prevent leaf blight in grapes",
+        "Tell me about Isariopsis leaf spot disease"
+      ],
+      "responses": [
+        "Grape Leaf Blight, caused by Isariopsis species, presents as small, angular brown lesions with yellow halos on leaves. It can be managed by removing infected leaves and using fungicides like copper-based treatments."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Grape_healthy",
+      "patterns": [
+        "What are the signs of healthy grapes?",
+        "How do healthy grapevines look?",
+        "What does a healthy grapevine need?",
+        "Tell me about healthy grape plants"
+      ],
+      "responses": [
+        "Healthy grapevines have vibrant green leaves and firm, plump fruit. They require proper sunlight, good soil drainage, and balanced watering to thrive."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Orange_Haunglongbing_Citrus_greening",
+      "patterns": [
+        "What is Haunglongbing in oranges?",
+        "Symptoms of citrus greening",
+        "How to treat Haunglongbing in oranges",
+        "How to prevent citrus greening in oranges",
+        "Tell me about Haunglongbing in citrus"
+      ],
+      "responses": [
+        "Haunglongbing, or Citrus Greening, is a bacterial disease that causes yellowing of leaves and misshapen fruit. It spreads by the Asian citrus psyllid. There is no cure, but control measures include removing infected trees and controlling the psyllid population."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Peach_Bacterial_spot",
+      "patterns": [
+        "What is bacterial spot in peaches?",
+        "Symptoms of bacterial spot in peaches",
+        "How to treat bacterial spot in peaches",
+        "How to prevent bacterial spot in peaches",
+        "Tell me about bacterial spot disease in peaches"
+      ],
+      "responses": [
+        "Bacterial spot in peaches is caused by the bacterium Xanthomonas prunicola. It leads to lesions on leaves, fruit, and twigs. Control measures include applying copper-based bactericides and proper pruning."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Peach_healthy",
+      "patterns": [
+        "What does a healthy peach tree look like?",
+        "How to recognize healthy peaches",
+        "What are the signs of healthy peach trees?"
+      ],
+      "responses": [
+        "Healthy peach trees have vibrant green leaves, strong branches, and fruit that is smooth and evenly colored. Proper watering, sunlight, and disease prevention are key for their health."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Pepper_Bell_Bacterial_spot",
+      "patterns": [
+        "What is bacterial spot in bell peppers?",
+        "Symptoms of bacterial spot in bell peppers",
+        "How to treat bacterial spot in bell peppers",
+        "How to prevent bacterial spot in bell peppers",
+        "Tell me about bacterial spot in bell peppers"
+      ],
+      "responses": [
+        "Bacterial spot in bell peppers is caused by Xanthomonas campestris pv. vesicatoria. It causes water-soaked lesions on leaves and fruit. Control can be achieved by using resistant varieties, proper spacing, and copper-based bactericides."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Pepper_Bell_healthy",
+      "patterns": [
+        "How do healthy bell peppers look?",
+        "What are the signs of healthy bell pepper plants?",
+        "What does a healthy bell pepper plant need?"
+      ],
+      "responses": [
+        "Healthy bell pepper plants have dark green leaves and firm, vibrant fruit. They thrive in well-drained soil with plenty of sunlight and moderate watering."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Potato_Early_blight",
+      "patterns": [
+        "What is early blight in potatoes?",
+        "Symptoms of early blight in potatoes",
+        "How to treat early blight in potatoes",
+        "How to prevent early blight in potatoes",
+        "Tell me about early blight disease in potatoes"
+      ],
+      "responses": [
+        "Early blight in potatoes is caused by the fungus Alternaria solani. It results in dark, concentric rings on leaves. Control involves rotating crops, applying fungicides, and removing infected leaves."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Potato_Late_blight",
+      "patterns": [
+        "What is late blight in potatoes?",
+        "Symptoms of late blight in potatoes",
+        "How to treat late blight in potatoes",
+        "How to prevent late blight in potatoes",
+        "Tell me about late blight in potatoes"
+      ],
+      "responses": [
+        "Late blight in potatoes is caused by the oomycete Phytophthora infestans. It causes dark, water-soaked lesions on leaves and stems, leading to rapid plant death. Management includes using resistant varieties, crop rotation, and fungicide applications."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Potato_healthy",
+      "patterns": [
+        "How do healthy potatoes look?",
+        "What are the signs of healthy potato plants?",
+        "What does a healthy potato plant need?"
+      ],
+      "responses": [
+        "Healthy potato plants have vibrant green foliage and well-formed tubers. They need full sunlight, proper spacing, and well-drained soil for optimal growth."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Raspberry_healthy",
+      "patterns": [
+        "How to recognize a healthy raspberry plant?",
+        "What does a healthy raspberry plant look like?",
+        "What are the signs of healthy raspberries?"
+      ],
+      "responses": [
+        "Healthy raspberry plants have strong, upright canes, vibrant green leaves, and abundant fruit production. Proper pruning and disease management are key."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Soybean_healthy",
+      "patterns": [
+        "How to tell if a soybean plant is healthy?",
+        "What does a healthy soybean plant look like?",
+        "What are the signs of healthy soybeans?"
+      ],
+      "responses": [
+        "Healthy soybean plants have strong stems, vibrant green leaves, and pods that are plump and fully formed. They thrive in well-drained soil with proper sunlight."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Squash_Powdery_mildew",
+      "patterns": [
+        "What is powdery mildew in squash?",
+        "Symptoms of powdery mildew in squash",
+        "How to treat powdery mildew in squash",
+        "How to prevent powdery mildew in squash",
+        "Tell me about powdery mildew in squash"
+      ],
+      "responses": [
+        "Powdery mildew in squash is caused by the fungus Podosphaera xanthii. It creates white, powdery spots on leaves. Control includes using resistant varieties, removing infected leaves, and applying fungicides."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Strawberry_Leaf_scorch",
+      "patterns": [
+        "What is leaf scorch in strawberries?",
+        "Symptoms of leaf scorch in strawberries",
+        "How to treat leaf scorch in strawberries",
+        "How to prevent leaf scorch in strawberries",
+        "Tell me about leaf scorch disease in strawberries"
+      ],
+      "responses": [
+        "Leaf scorch in strawberries is caused by environmental stress, typically heat or drought. It causes leaves to turn brown at the edges. Managing water stress and providing proper irrigation can help prevent this."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Strawberry_healthy",
+      "patterns": [
+        "What are the signs of healthy strawberries?",
+        "How do healthy strawberry plants look?",
+        "What does a healthy strawberry plant need?"
+      ],
+      "responses": [
+        "Healthy strawberry plants have lush green leaves, strong runners, and vibrant red fruit. They require adequate water, sunlight, and well-drained soil."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Tomato_Bacterial_spot",
+      "patterns": [
+        "What is bacterial spot in tomatoes?",
+        "Symptoms of bacterial spot in tomatoes",
+        "How to treat bacterial spot in tomatoes",
+        "How to prevent bacterial spot in tomatoes",
+        "Tell me about bacterial spot in tomatoes"
+      ],
+      "responses": [
+        "Bacterial spot in tomatoes is caused by Xanthomonas spp. It presents as small, water-soaked lesions on leaves. Treatment includes using copper-based bactericides and removing infected plant material."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Tomato_Early_blight",
+      "patterns": [
+        "What is early blight in tomatoes?",
+        "Symptoms of early blight in tomatoes",
+        "How to treat early blight in tomatoes",
+        "How to prevent early blight in tomatoes",
+        "Tell me about early blight disease in tomatoes"
+      ],
+      "responses": [
+        "Early blight in tomatoes is caused by Alternaria solani and causes dark spots on leaves with concentric rings. Treatment includes crop rotation, proper spacing, and fungicides."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Tomato_Late_blight",
+      "patterns": [
+        "What is late blight in tomatoes?",
+        "Symptoms of late blight in tomatoes",
+        "How to treat late blight in tomatoes",
+        "How to prevent late blight in tomatoes",
+        "Tell me about late blight in tomatoes"
+      ],
+      "responses": [
+        "Late blight in tomatoes is caused by Phytophthora infestans. It leads to water-soaked lesions and rapid plant death. Management includes removing infected plants, applying fungicides, and practicing crop rotation."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Tomato_Leaf_Mold",
+      "patterns": [
+        "What is leaf mold in tomatoes?",
+        "Symptoms of leaf mold in tomatoes",
+        "How to treat leaf mold in tomatoes",
+        "How to prevent leaf mold in tomatoes",
+        "Tell me about leaf mold disease in tomatoes"
+      ],
+      "responses": [
+        "Leaf mold in tomatoes is caused by the fungus Passalora fulva. It leads to yellowing and browning of leaves. Management includes removing infected leaves and applying fungicides."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Tomato_Septoria_leaf_spot",
+      "patterns": [
+        "What is septoria leaf spot in tomatoes?",
+        "Symptoms of septoria leaf spot in tomatoes",
+        "How to treat septoria leaf spot in tomatoes",
+        "How to prevent septoria leaf spot in tomatoes",
+        "Tell me about septoria leaf spot in tomatoes"
+      ],
+      "responses": [
+        "Septoria leaf spot in tomatoes is caused by the fungus Septoria lycopersici. It leads to small, dark spots on leaves. Control involves removing infected leaves and applying fungicides."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Tomato_Spider_mites_Two-spotted_spider_mite",
+      "patterns": [
+        "What are spider mites in tomatoes?",
+        "Symptoms of two-spotted spider mites in tomatoes",
+        "How to treat spider mites in tomatoes",
+        "How to prevent spider mites in tomatoes",
+        "Tell me about spider mites in tomatoes"
+      ],
+      "responses": [
+        "Spider mites, including two-spotted spider mites, are tiny pests that cause stippling and yellowing of leaves. Control methods include using miticides, water sprays, and natural predators like ladybugs."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Tomato_Target_Spot",
+      "patterns": [
+        "What is target spot in tomatoes?",
+        "Symptoms of target spot in tomatoes",
+        "How to treat target spot in tomatoes",
+        "How to prevent target spot in tomatoes",
+        "Tell me about target spot disease in tomatoes"
+      ],
+      "responses": [
+        "Target spot in tomatoes is caused by the fungus Corynespora cassiicola. It results in circular lesions with concentric rings. Treatment includes using fungicides and removing infected plant material."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Tomato_Tomato_Yellow_Leaf_Curl_Virus",
+      "patterns": [
+        "What is Tomato Yellow Leaf Curl Virus?",
+        "Symptoms of Tomato Yellow Leaf Curl Virus",
+        "How to treat Tomato Yellow Leaf Curl Virus",
+        "How to prevent Tomato Yellow Leaf Curl Virus",
+        "Tell me about Tomato Yellow Leaf Curl Virus"
+      ],
+      "responses": [
+        "Tomato Yellow Leaf Curl Virus is transmitted by whiteflies and causes yellowing and curling of leaves. There is no cure, but control includes using resistant varieties and managing whitefly populations."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Tomato_Tomato_mosaic_virus",
+      "patterns": [
+        "What is Tomato Mosaic Virus?",
+        "Symptoms of Tomato Mosaic Virus",
+        "How to treat Tomato Mosaic Virus",
+        "How to prevent Tomato Mosaic Virus",
+        "Tell me about Tomato Mosaic Virus"
+      ],
+      "responses": [
+        "Tomato Mosaic Virus causes mottling and deformity in tomato leaves and fruit. It is spread through contact with infected plants and contaminated tools. Control involves removing infected plants and disinfecting tools."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    },
+    {
+      "tag": "Tomato_healthy",
+      "patterns": [
+        "What does a healthy tomato plant look like?",
+        "What are the signs of healthy tomatoes?",
+        "What does a healthy tomato plant need?"
+      ],
+      "responses": [
+        "Healthy tomato plants have lush green leaves, strong stems, and vibrant red fruit. They require adequate sunlight, well-drained soil, and regular watering."
+      ],
+      "metadata": {
+        "confidence_threshold": 0.85,
+        "priority": 1
+      }
+    }
+  ]
+
+}
