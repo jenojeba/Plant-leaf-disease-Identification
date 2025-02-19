@@ -138,7 +138,7 @@ def upload_file():
             
             return render_template('result.html', label=result, image_url=image_url, audio_filename=audio_filename)
     
-    return render_template('upload.html')
+    return render_template('index.html')
 
 # Chatbot Route
 @app.route('/chatbot', methods=['POST'])
